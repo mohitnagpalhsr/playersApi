@@ -26,12 +26,22 @@ namespace ServiceLayer
             var e=playerRepo.GetPlayerById(id);
              return (e); 
         }
+        public Player GetPlayerByName (string name){
+
+            var e=playerRepo.GetPlayerByName(name);
+             return (e); 
+        }
 
         public void UpdatePlayer(int id, Player p)
         {
             playerRepo.UpdatePlayer(id,p);
         }
 
+        public List<Player> GetPlayersBySportName(string name)
+        {
+            var e=playerRepo.GetPlayersBySportName(name);
+            return (e);
+        }
         /*public void RemovePlayer(int id)
         {
             playerRepo.RemovePlayer(id);

@@ -30,6 +30,14 @@ namespace RepoLayer
            return (e);
         }
 
+        public Player GetPlayerByName(string name)
+        {
+            
+            Player e = _context.Players.SingleOrDefault(x=>x.PlayerName==name);
+            
+           return (e);
+        }
+
         /*public void RemovePlayer(int id)
         {
             Player player = _context.Players.Find(id);
@@ -43,5 +51,11 @@ namespace RepoLayer
             _context.SaveChanges();
         }
 
+        public List<Player> GetPlayersBySportName(string name)
+        {
+            var e= _context.Players.Where(item => item.SportsName == name)
+                       .ToList();
+            return (e);
+        }
     }
 }

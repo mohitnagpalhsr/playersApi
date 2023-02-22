@@ -48,6 +48,31 @@ namespace SportsEventAPI.Controllers
             return Ok(e);
         }
 
+        [HttpGet]
+        [Route("PlayerByName")]
+        public async Task<ActionResult<Player>> GetPlayerByName(string name)
+        {
+            var e = playerService.GetPlayerByName(name);
+            if(e is null)
+            return NotFound();
+            else
+            return Ok(e);
+        }
+
+        [HttpGet]
+        [Route("PlayersBySportName")]
+        public async Task<ActionResult<IEnumerable<Player>>> GetPlayersBySportName(string name)
+        {
+            //Event e = await db.Events.Where(x=>x.EventName==name);
+
+            var e=playerService.GetPlayersBySportName(name);
+            
+            if(!e.Any())
+            return NotFound();
+            else
+            return Ok(e);
+        }
+
         [HttpPut]
         public async Task<ActionResult<Player>> UpdatePlayer(int id,Player p) 
         {
