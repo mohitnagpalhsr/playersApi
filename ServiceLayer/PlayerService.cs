@@ -27,10 +27,15 @@ namespace ServiceLayer
              return (e); 
         }
 
-        public void RemovePlayer(int id)
+        public void UpdatePlayer(int id, Player p)
+        {
+            playerRepo.UpdatePlayer(id,p);
+        }
+
+        /*public void RemovePlayer(int id)
         {
             playerRepo.RemovePlayer(id);
-        }
+        }*/
 
     }
 }

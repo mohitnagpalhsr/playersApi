@@ -47,12 +47,20 @@ namespace SportsEventAPI.Controllers
             else
             return Ok(e);
         }
-        // DELETE: api/Players/5
+
+        [HttpPut]
+        public async Task<ActionResult<Player>> UpdatePlayer(int id,Player p) 
+        {
+            playerService.UpdatePlayer(id,p);
+            return Ok(); 
+        }
+        
+        /*// DELETE: api/Players/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemovePlayer(int id)
         {
             playerService.RemovePlayer(id);
             return Ok();
-        }
+        }*/
     }
 }

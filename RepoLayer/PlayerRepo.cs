@@ -30,10 +30,16 @@ namespace RepoLayer
            return (e);
         }
 
-        public void RemovePlayer(int id)
+        /*public void RemovePlayer(int id)
         {
             Player player = _context.Players.Find(id);
             _context.Players.Remove(player);
+            _context.SaveChanges();
+        }*/
+        public void UpdatePlayer(int id, Player p)
+        {
+            //_context.Players.UpdatePlayer(p); //here no
+            _context.Entry(p).State=EntityState.Modified;
             _context.SaveChanges();
         }
 
