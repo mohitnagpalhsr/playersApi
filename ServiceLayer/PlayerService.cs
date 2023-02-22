@@ -22,6 +22,11 @@ namespace ServiceLayer
             playerRepo.AddPlayer(player);
         }
 
+        public Player GetPlayerById (int id){
+            var e=playerRepo.GetPlayerById(id);
+             return (e); 
+        }
+
         public void RemovePlayer(int id)
         {
             playerRepo.RemovePlayer(id);

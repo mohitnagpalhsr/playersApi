@@ -37,6 +37,16 @@ namespace SportsEventAPI.Controllers
             return Ok();
         }
 
+        [HttpGet]
+        [Route("PlayerById")]
+        public async Task<ActionResult<Player>> GetPlayerById(int id)
+        {
+            var e = playerService.GetPlayerById(id);
+            if(e is null)
+            return NotFound();
+            else
+            return Ok(e);
+        }
         // DELETE: api/Players/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> RemovePlayer(int id)

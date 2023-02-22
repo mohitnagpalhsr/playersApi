@@ -22,6 +22,14 @@ namespace RepoLayer
             _context.SaveChanges();
         }
 
+         public Player GetPlayerById(int id)
+        {
+            
+            Player e = _context.Players.Find(id);
+            
+           return (e);
+        }
+
         public void RemovePlayer(int id)
         {
             Player player = _context.Players.Find(id);
