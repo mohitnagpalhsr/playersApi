@@ -53,7 +53,7 @@ namespace RepoLayer
 
         public List<Player> GetPlayersBySportName(string name)
         {
-            var e= _context.Players.Where(item => item.SportsName == name)
+            var e= _context.Players.Where(item => (item.SportsName == name) && (item.Status=="active"))
                        .ToList();
             return (e);
         }
